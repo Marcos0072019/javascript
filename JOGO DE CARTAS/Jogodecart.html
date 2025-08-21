@@ -59,7 +59,7 @@
             },
             {
                 question: " Qual o valor de 𝑉 > 𝑉 ?",
-                options: ["F", "indeterminado ", " Verdade"],
+                options: ["F", "indeterminado ", " Verdadeiro"],
                 correct: " Verdadeiro"
             },
             {
@@ -70,8 +70,9 @@
            
            
         ];
-        let currentQuestion = null;
+        let remainingQuestions = [...questions];
         let score = 0;
+        let currentQuestion;
         drawCard();
     </script>
 </body>
