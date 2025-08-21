@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Cartas de Perguntas</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <button onclick="resetGame()">Reiniciar Jogo</button>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Jogo de Cartas de Perguntas</h1>
+        <p>Pontuação: <span id="score">0</span></p>
+        <div id="card" class="card">
+            <p id="question"></p>
+            <div id="options" class="options"></div>
+        </div>
+        <button id="next-btn" onclick="drawCard()">Sortear Próxima Carta</button>
+        <p id="feedback"></p>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Qual o valor lógico de uma proposição verdadeira ?",
+                options: ["V", "0", "+1"],
+                correct: "V"
+            },
+            {
+                question: "Como é chamado uma repetição de instruções até uma condição ser falsa.?",
+                options: ["BYTE", "LOOP", "CSS"],
+                correct: "LOOP"
+            },
+            {
+                question: "O que é uma proposição ?",
+                options: ["Uma afirmação que pode ser verdadeira ou falsa", "Um número inteiro", "Um operador lógico"],
+                correct: "Uma afirmação que pode ser verdadeira ou falsa"
+            },
+            {
+                question: "Quem crio o primeiro computador funcional ?",
+                options: ["Konrad Zuse", "Alan Turing", "Max sheldon"],
+                correct: "Konrad Zuse"
+            },
+            {
+                question: "Qual símbolo representa a negação lógica ?",
+                options: ["¬p", ">", "<"],
+                correct: "¬p"
+            },
+            {
+                question: " Qual é o resultado de 𝑉 < 𝐹 ?",
+                options: ["F", "Falso ou Verdadeiro ", "V"],
+                correct: "F"
+            }
+           
+        ];
+        let currentQuestion = null;
+        let score = 0;
+        drawCard();
+    </script>
+</body>
+</html>
