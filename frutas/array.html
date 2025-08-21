@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mostrar Fruta</title>
+</head>
+<body>
+    <h1>Clique no botão para ver a segunda fruta</h1>
+
+    <button onclick="mostrarFruta()">Mostrar fruta</button>
+
+    <p id="fruta"></p> 
+    <p id="fruta"></p> 
+
+    <script>
+        
+        const frutas = ["Abacate","Uva", "tomate"];
+
+        function mostrarFruta() {
+            const segundaFruta = frutas[1];
+            document.getElementById("fruta").textContent = "A segunda fruta é: " + segundaFruta;
+            
+        }
+    </script>
+</body>
+</html>
