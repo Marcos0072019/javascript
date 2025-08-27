@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pilha - Exercício com Erros Sutis</title>
+</head>
+<body>
+  <h2>Simulação de Pilha (Push e Pop)</h2>
+
+  <input type="text" id="valor" placeholder="Digite um valor">
+  <button onclick="empilhar()">Empilhar</button>
+  <button onclick="desempilhar()">Desempilhar</button>
+  <button onclick="verTopo()">Ver Topo</button>
+
+  <h3>Pilha atual:</h3>
+  <ul id="pilha"></ul>
+
+  <script>
+    let pilha = [];
+
+    function empilhar() {
+      let valor = document.getElementById("valor").value;
+      if (valor !== "") {
+        pilha.push(valor); 
+        document.getElementById("valor").value = "";
+        mostrarPilha();
+      }
+    }
+
+    function desempilhar() {
+      if (pilha.length > 0) {
+        alert("Removido: " + pilha.pop()); 
+        mostrarPilha();
+      } else {
+        alert("A pilha está vazia!");
+      }
+    }
+
+    function verTopo() {
+      if (pilha.length > 0) {
+        alert("Topo da pilha: " + pilha[0]); // O erro anterior influencia: aqui parece certo, mas está pegando o valor errado
+      } else {
+        alert("A pilha está vazia!");
+      }
+    }
+
+    function mostrarPilha() {
+      let lista = document.getElementById("pilha");
+      lista.innerHTML = "";
+      for (let i = pilha.length - 1; i >= 0; i--) {
+        let li = document.createElement("li");
+        li.textContent = pilha[i];
+        lista.appendChild(li);
+      }
+    }
+  </script>
+</body>
+</html>

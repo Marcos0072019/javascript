@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pilha - Exercício 1 (com erro)</title>
+</head>
+<body>
+  <h2>Simulação de Pilha (Push e Pop)</h2>
+
+  <input type="text" id="valor" placeholder="Digite um valor">
+  <button onclick="empilhar()">Empilhar (Push)</button>
+  <button onclick="desempilhar()">Desempilhar (Pop)</button>
+
+  <h3>Pilha atual:</h3>
+  <ul id="pilha"></ul>
+
+  <script>
+    let pilha = []; // Estrutura da pilha
+
+    function empilhar() {
+      let valor = document.getElementById("valor").value;
+      if (valor !== "") {
+        pilha.push(valor);
+        document.getElementById("valor").value = "";
+        mostrarPilha();
+      }
+    }
+
+    function desempilhar() {
+      if (pilha.length > 0) {
+        alert("Removido: " + pilha.pop());
+        mostrarPilha();
+      } else {
+        alert("A pilha está vazia!");
+      }
+    }
+
+    function mostrarPilha() {
+      let lista = document.getElementById("pilha");
+      lista.innerHTML = "";
+      for (let i = pilha.length - 1; i >= 0; i--) {
+        let li = document.createElement("li");
+        li.textContent = pilha[i];
+        lista.appendChild(li);
+      }
+    }
+  </script>
+</body>
+</html>

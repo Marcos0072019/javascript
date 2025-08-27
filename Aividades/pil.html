@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Histórico de Navegador</title>
+      <link rel="stylesheet" href="stylee.css">
+    <script src="pl.js"></script>
+        </head>
+        <body>
+        <h1>Histórico de Navegador</h1>
+        <div>
+        <input type="text" id="pageInput" placeholder="Digite a página (ex: Google)">
+        <button onclick="visitPage()">Visitar Página</button>
+        <button onclick="goBack()">Voltar</button>
+    </div>
+    <div id="currentPage">Página atual: Nenhuma</div>
+    <div id="history">Histórico: []</div>
+</body>
+</html>
